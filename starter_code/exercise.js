@@ -5,7 +5,7 @@ exercise.hello = function(){
     //   QUESTION 01
     //   Return a string that says "Hello!"
     // ----------------------------------------
-    return 'Error: Question 01 not implemented';
+    return 'Hello!';
 };
 
 exercise.numberArray = function(){
@@ -13,7 +13,8 @@ exercise.numberArray = function(){
     //   QUESTION 02
     //   Return an array of numbers
     // ----------------------------------------
-    return 'Error: Question 02 not implemented';
+    myArr = [3,4,5,6,2,1];
+    return myArr;
 };
 
 exercise.nameAndAge = function(){
@@ -22,7 +23,7 @@ exercise.nameAndAge = function(){
     //   Return an object with
     //   a 'name' and 'age' property
     // ----------------------------------------
-    return 'Error: Question 03 not implemented';
+    return {name: 'stephanie', age: 19};
 };
 
 exercise.objectArray = function(){
@@ -31,7 +32,7 @@ exercise.objectArray = function(){
     //   Return an array of empty objects
     //   The array can have any length you like.
     // ----------------------------------------
-    return 'Error: Question 04 not implemented';
+    return [{},{},{}];
 };
 
 exercise.addProperty = function(someObject){
@@ -40,7 +41,8 @@ exercise.addProperty = function(someObject){
     //   Add the property 'name' to someObject
     //   Give 'name' any value you like.
     // ----------------------------------------
-    return 'Error: Question 05 not implemented';
+    someObject.name='peter'
+    return someObject;
 };
 
 exercise.thirdElement = function(someArray){
@@ -48,7 +50,7 @@ exercise.thirdElement = function(someArray){
     //   QUESTION 06
     //   Return the third element of array
     // ----------------------------------------
-    return 'Error: Question 06 not implemented';
+    return someArray[2];
 };
 
 exercise.concatenate = function(string1, string2, string3){
@@ -57,7 +59,7 @@ exercise.concatenate = function(string1, string2, string3){
     //   Return the concatenation of
     //   string1, string2, string3
     // ----------------------------------------
-    return 'Error: Question 07 not implemented';
+    return [string1+string2+string3];
 };
 
 exercise.greaterThanSix = function(someNumbers){
@@ -66,7 +68,11 @@ exercise.greaterThanSix = function(someNumbers){
     //   Filter array for values greater than 6
     //   Return the filtered array
     // ----------------------------------------
-    return 'Error: Question 08 not implemented';
+    var res = someNumbers
+        .filter(function(mynum) {
+            return (mynum > 6);
+        });
+    return res;
 };
 
 exercise.getNames = function(people){
@@ -86,7 +92,11 @@ exercise.getNames = function(people){
     //   You should return
     //     ['peter','bruce','clark','diana']
     // ----------------------------------------
-    return 'Error: Question 09 not implemented';
+    var res = people
+        .map(function(person) {
+            return person.name;
+        });
+    return res;
 };
 
 exercise.getSalaryTotal = function(people){
@@ -106,7 +116,11 @@ exercise.getSalaryTotal = function(people){
     //   you should return
     //     10000
     // ----------------------------------------
-    return 'Error: Question 10 not implemented';
+    total=0;
+    people.forEach(function(person) {
+        total = total + person.salary
+    });
+    return total;
 };
 
 exercise.sortNumbers = function(someNumbers){
@@ -116,7 +130,10 @@ exercise.sortNumbers = function(someNumbers){
     //   return the sorted array
     //   Ascending or descenging.
     // ----------------------------------------
-    return 'Error: Question 11 not implemented';
+    var compare = function(a,b) {
+        return a - b;
+    };
+    return someNumbers.sort(compare);
 };
 
 exercise.executeCallback = function(callback){
@@ -124,7 +141,7 @@ exercise.executeCallback = function(callback){
     //   QUESTION 12
     //   Execute callback
     // ----------------------------------------
-    return 'Error: Question 12 not implemented';
+    return callback();
 };
 
 exercise.getPersonAndJob = function(payroll){
@@ -133,7 +150,11 @@ exercise.getPersonAndJob = function(payroll){
     //   Return an array of people and jobs
     //  [['person', 'job'], ['person,job'];
     // ----------------------------------------
-    return 'Error: Question 13 not implemented';
+    var myArr = [];
+    payroll.forEach(function(item) {
+        myArr[item[1]] = item[2];
+    });
+    return myArr;
 };
 
 exercise.getTotalPayroll = function(payroll){
@@ -142,7 +163,12 @@ exercise.getTotalPayroll = function(payroll){
     //   Return the total payroll
     //   as an integer, use reduce
     // ----------------------------------------
-    return 'Error: Question 14 not implemented';
+    var res = payroll.reduce(
+        function(acc, curr) {
+            acc += Number(curr[3]);
+            return acc;
+        }, 0);
+    return res;
 };
 
 exercise.getEarningsAbove = function(payroll,target){
@@ -151,7 +177,11 @@ exercise.getEarningsAbove = function(payroll,target){
     //   Return the number of people with
     //   earnings above target
     // ----------------------------------------
-    return 'Error: Question 15 not implemented';
+    var res = payroll
+        .filter(function(item) {
+            return (item[3] > target);
+        })
+    return res.length;
 };
 
 exercise.getNumberOfZipCodesWith = function(payroll,num){
@@ -160,7 +190,11 @@ exercise.getNumberOfZipCodesWith = function(payroll,num){
     //   Return the number of zip codes
     //   with 'num' anywhere in them
     // ----------------------------------------
-    return 'Error: Question 16 not implemented';
+    var res = payroll
+        .filter(function(item) {
+            return (item[4].includes('3'));
+        });
+    return res.length;
 };
 
 
